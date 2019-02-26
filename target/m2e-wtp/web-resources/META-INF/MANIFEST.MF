@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Deloitte TODO Tasks Application
+Implementation-Version: 0.1
+Built-By: mkotha
+Implementation-Vendor-Id: org.springframework.boot
+Build-Jdk: 1.8.0_161
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/tasks
+Created-By: Maven Integration for Eclipse
+
