@@ -37,7 +37,7 @@ class LoginPage extends React.Component {
 					<div className="six wide field required inline">
 					  <p> </p>
 						<label className="ui label" htmlFor="password"> Enter Password: </label>
-						<input id="password" className="ui input" type="text" value={this.state.password}
+						<input id="password" className="ui input" type="password" value={this.state.password}
 							onChange = { e => this.setState ( {password : e.target.value} )} />
  					</div>
 

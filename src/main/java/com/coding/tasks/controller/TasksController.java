@@ -35,7 +35,6 @@ public class TasksController {
 	}
 
 	@DeleteMapping("/tasks/{taskId}")
-	@CrossOrigin
 	public ResponseEntity<?> deleteTask(@PathVariable("taskId") Long taskId) {
 		taskService.deleteTask(taskId);
 		return ResponseEntity.status(HttpStatus.OK).build();

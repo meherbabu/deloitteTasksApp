@@ -18,16 +18,39 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserRepository userRepo;
 
+	@Override
+	public Long createUser(String userRequest) {
+		return userRepo.save(getUserFromJson(userRequest)).getUserId();
+	}
+
+	@Override
+	public List<UserVO> getUsers() {
+		List<UserVO> userVOList = new ArrayList<UserVO>();
+		userRepo.findAll().forEach(user -> userVOList.add(convertModelToVO(user)));
+
+		return userVOList;
+	}
+
+	@Override
+	public Long verifyLoginCredentials(String msg) {
+		User user = getUserFromJson(msg);
+		Long userId = userRepo.findUser(user.getName(), user.getPassword());
+		return userId;
+	}
+
+	@Override
+	public Long verifySignup(String msg) {
+		User user = getUserFromJson(msg);
+		Long userId = userRepo.findUser(user.getName());
+		return userId;
+	}
+
 	private User getUserFromJson(String userRequest) {
 		Gson gson = new Gson();
 		UserVO userVO = gson.fromJson(userRequest, UserVO.class);
 		User user = convertVOToModel(userVO);
 
 		return user;
-	}
-
-	public Long createUser(String userRequest) {
-		return userRepo.save(getUserFromJson(userRequest)).getUserId();
 	}
 
 	private User convertVOToModel(UserVO userVO) {
@@ -46,28 +69,6 @@ public class UserServiceImpl implements UserService {
 		userVO.setPassword(user.getPassword());
 		userVO.setUserId(user.getUserId());
 		return userVO;
-	}
-
-	@Override
-	public List<UserVO> getUsers() {
-		List<UserVO> userVOList = new ArrayList<UserVO>();
-		userRepo.findAll().forEach(user -> userVOList.add(convertModelToVO(user)));
-
-		return userVOList;
-	}
-
-	@Override
-	public Long verifyLoginCredentials(String msg) {
-		User user = getUserFromJson(msg);
-		Long userId = userRepo.findUser(user.getName(), user.getPassword());
-		return userId;
-	}
-	
-	@Override
-	public Long verifySignup(String msg) {
-		User user = getUserFromJson(msg);
-		Long userId = userRepo.findUser(user.getName());
-		return userId;
 	}
 
 }

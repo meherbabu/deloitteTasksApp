@@ -26756,7 +26756,7 @@ function (_React$Component) {
       }, " Enter Password: "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "password",
         className: "ui input",
-        type: "text",
+        type: "password",
         value: this.state.password,
         onChange: function onChange(e) {
           return _this2.setState({
