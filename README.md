@@ -4,6 +4,13 @@ About the Application:
 
 How to Run the Application:
 ---------------------------
+Method-1 (Easy to use): 
+----------------------
+Hit the URL https://18.218.189.51/tasks/
+Application is deployed in AWS. Created 2 test users (test/test123) & (test1/test123). You can use these users OR you can signup new users into the application. Signup Functionality also provided.
+
+Method-2:
+--------
 1.	Deployable Archive (WAR) is present in the target folder. Please copy to webapps folder in tomcat installation directory.
 2.  In src/main/resources/conf folder, there are .jks & server.xml (Updated server.xml to support HTTPS) files. 
     Please copy the files to conf folder in tomcat installation director. 
@@ -23,11 +30,18 @@ Back-end (REST API) – Spring Boot
 Database – HSQLDB (In Memory Database)
 Code Coverage Tool - Eclemma
 Applicaton Server - Tomcat
+Cloud - AWS (To deploy the Application)
 
 Security Considerations:
 ------------------------
 1. HTTPS is being used to serve the application, to secure the data in transit.
 2. Users and Passwords are stored in Database. During User signup/login, credentials will be checked against the Database.
+
+
+Additional Features provided:
+----------------------------
+1. Signup Functionality is provided to signup New users.
+2. Application deployed in AWS and the respective URL is provided above.
 
 If given more time, I would like to do:
 ---------------------------------------
@@ -36,6 +50,7 @@ If given more time, I would like to do:
 2.	Probably use Caching stuff either at UI layer or in the SpringBoot service layer.
 3.	Configure Jenkins job to build and deploy once the code is checked-in and deploy it in the respective machines.
 4.	Apply more CSS styling to improve the look and feel of the application.	
+
 
 
 I want to let you know..
@@ -49,5 +64,4 @@ Note: It’s been 3 years since I have worked on any UI Framework. So, I have le
 
 3.	SpringBoot is used to develop the REST API. Its convenient and faster to develop REST API using this framework.
               DAO classes are based on spring data jpa.
-              
-4.	HSQL in-memory database to persist the data.
+        
