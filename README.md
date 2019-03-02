@@ -47,9 +47,10 @@ If given more time, I would like to do:
 ---------------------------------------
 1.	Organize the reactjs code properly into different layers (service, UI etc.,)
 2.  Learn Redux and apply in the Middleware of the UI.
-2.	Probably use Caching stuff either at UI layer or in the SpringBoot service layer.
-3.	Configure Jenkins job to build and deploy once the code is checked-in and deploy it in the respective machines.
-4.	Apply more CSS styling to improve the look and feel of the application.	
+3.	Probably use Caching stuff either at UI layer or in the SpringBoot service layer.
+4.	Configure Jenkins job to build and deploy once the code is checked-in and deploy it in the respective machines.
+5.	Apply more CSS styling to improve the look and feel of the application.	
+6.  Has limited knowledge of docker containers, so can try doing that too.
 
 
 
@@ -64,4 +65,6 @@ Note: It’s been 3 years since I have worked on any UI Framework. So, I have le
 
 3.	SpringBoot is used to develop the REST API. Its convenient and faster to develop REST API using this framework.
               DAO classes are based on spring data jpa.
+              
+4. Both the Integration Tests and JUnit Tests are provided in the source code. Once the mvn clean package command is run to build the war file, target/site/index.html will be generated in which the code coverage report has been present.
         
